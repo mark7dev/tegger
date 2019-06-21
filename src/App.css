@@ -3,7 +3,17 @@
 } */
 
 .form-container {
-  outline: 1px solid red;
+  width: 30%;
+  margin: 50px auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border: 3px solid red;
+  border-radius: 5px;
+  background-color: orange;
 }
 
 .textarea {
@@ -16,12 +26,17 @@
 	overflow: auto;
 	height: auto;
   padding: 8px;
-  width: 20%;
+  /* width: 50%; */
 	/* box-shadow: 0px 4px 10px -8px black; */
 }
-	
-.textarea::placeholder	{
-  color: gainsboro
+
+label {
+  margin-top: 10px;
+}
+
+button {
+  width: 50%;
+  margin: 15px auto;
 }
 
 /* .textarea:focus {

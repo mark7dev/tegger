@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import request from 'superagent';
 
 class App extends Component {
 
   constructor(props) {
 		super(props);
 		this.state = {
+      email: '',
 			value: '',
 			rows: 1,
 			minRows: 1,
@@ -36,12 +38,28 @@ class App extends Component {
       rows: currentRows < maxRows ? currentRows : maxRows,
     });
   };
+
+  handleChangeEmail = (e) => {
+    this.setState({ email: e.target.value })
+  }
   
   sendInfo = (e) => {
     e.preventDefault();
     console.log('ENVIADO');
     document.getElementById('form').reset();
     this.setState({ value: ''});
+
+
+    request
+    .post('')
+    .set({
+      'Content-Type': 'application/json'
+    })
+    .send(this.state)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error=> console.error(error));
   }
 
 
@@ -54,13 +72,13 @@ class App extends Component {
             <textarea 
               rows={this.state.rows}
               value={this.state.value}
-              placeholder={'Enter your text here...'}
+              // placeholder={'Enter your text here...'}
               className={'textarea'}
               onChange={this.handleChange}
             />
             <label>Email</label>
-            <input type="email"/>
-            <button onClick={this.sendInfo}>ENVIAR</button>
+            <input type="email" onChange={this.handleChangeEmail}/>
+            <button onClick={this.sendInfo} disabled={!this.state.value || !this.state.email}>ENVIAR</button>
           </form>
         </div>
       </div>
