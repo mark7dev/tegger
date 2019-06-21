@@ -51,11 +51,11 @@ class App extends Component {
 
 
     request
-    .post('')
+    .post('https://api.github.com/repos/mark7dev/tegger/issues')
     .set({
       'Content-Type': 'application/json'
     })
-    .send(this.state)
+    .send(this.state.email, this.state.value)
     .then(response => {
       console.log(response);
     })
