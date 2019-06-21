@@ -1,33 +1,29 @@
-.App {
+/* .App {
   text-align: center;
+} */
+
+.form-container {
+  outline: 1px solid red;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.textarea {
+  box-sizing: border-box;
+	/* border: none; */
+	/* border-radius: 3px; */
+	resize: none;
+	/* font-size: 20px;
+	line-height: 24px; */
+	overflow: auto;
+	height: auto;
+  padding: 8px;
+  width: 20%;
+	/* box-shadow: 0px 4px 10px -8px black; */
+}
+	
+.textarea::placeholder	{
+  color: gainsboro
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* .textarea:focus {
+  outline: none
+} */
